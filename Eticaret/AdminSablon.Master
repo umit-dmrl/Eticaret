@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminSablon.master.cs" Inherits="E_Ticaret_Projesi.AdminSablon" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Yönetim Paneli</title>
+    <link rel="stylesheet" href="assets/css/Admin.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css">
+    <link rel='stylesheet prefetch' href='assets/css/bootstrap.min.css'>
+    <script src='assets/js/jquery.min.js'></script>
+    <script src='assets/js/bootstrap.min.js'></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    &nbsp;<div class="main">
+        <div class="header">
+            <div class="logo">Yönetim Paneli</div>
+            <div class="header-menu">
+                Hoşgeldin <asp:Label ID="lblUserName" runat="server" Text="" style="text-decoration:underline; font-weight:bold; text-transform:uppercase;"></asp:Label> 
+                <a href="~/Default.aspx">Siteye Git</a>
+                <a href="~/Logout.aspx">Çıkış Yap</a>
+            </div>
+        </div>
+        <nav class="left-menu">
+            <div class="menu-title"><i class="fa fa-list"></i> Kategori Yönetimi</div>
+            <ul id="menu">
+                <li><a href="KategoriEkle.aspx"><i class="fa fa-arrow-circle-right"></i> Yeni Kategori Ekle</a></li>
+                <li><a href="KategoriListesi.aspx"><i class="fa fa-arrow-circle-right"></i> Kategori Listesi</a></li>
+            </ul>
+            <div class="menu-title"><i class="fa fa-product-hunt"></i> Ürün Yönetimi</div>
+            <ul id="menu">
+                <li><a href="YeniUrunEkle.aspx"><i class="fa fa-arrow-circle-right"></i> Yeni Ürün Ekle</a></li>
+                <li><a href="UrunListesi.aspx"><i class="fa fa-arrow-circle-right"></i> Ürünleri Listele</a></li>
+                <li><a href="UrunResimleriYukle.aspx"><i class="fa fa-image"></i> Ürün Resimleri Yükle</a></li>
+            </ul>
+        </nav>
+        <main class="body">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+            </asp:ContentPlaceHolder>
+        </main>
+
+        
+    </div>
+    </form>
+</body>
+</html>
