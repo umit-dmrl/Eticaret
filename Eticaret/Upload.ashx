@@ -43,7 +43,7 @@ public class Upload : IHttpHandler
             
             try
             {
-                SqlCommand command = new SqlCommand("Insert Into urun_resimleri (ResimAdi) values(@ResimAdi)", conn);
+                SqlCommand command = new SqlCommand("Insert Into yuklenen_urun_resimleri (ResimAdi) values(@ResimAdi)", conn);
                 command.Parameters.AddWithValue("@ResimAdi", resimGuid + ext);
                 conn.Open();
                 command.ExecuteNonQuery();

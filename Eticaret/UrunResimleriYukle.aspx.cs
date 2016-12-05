@@ -20,7 +20,7 @@ namespace Eticaret
                 try
                 {
                     vt.cnn.Open();
-                    SqlDataAdapter adp = new SqlDataAdapter("select * from urun_resimleri order by id desc",vt.cnn);
+                    SqlDataAdapter adp = new SqlDataAdapter("select * from yuklenen_urun_resimleri order by id desc",vt.cnn);
                     DataTable tbl = new DataTable();
                     adp.Fill(tbl);
                     listResimler.DataSource = tbl.DefaultView;

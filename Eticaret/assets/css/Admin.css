@@ -45,6 +45,8 @@
     margin-left:auto; margin-right:auto;
     min-height:800px;
     border:1px solid gray;
+    overflow:hidden;
+    padding-bottom:30px;
 }
 .main .header{
     display:block;
