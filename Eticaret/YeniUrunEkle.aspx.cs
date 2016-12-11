@@ -39,7 +39,7 @@ namespace Eticaret
                 {
                     vt.cnn.Close();
                 }
-                Response.Redirect("~/UrunListesi.aspx");
+                
             }
         }
 
@@ -117,7 +117,7 @@ namespace Eticaret
                 vt.cnn.Close();
             }
             //Response.Write("OpKod : "+urunOpKod+"<br>Kategori ID : "+kategoriID+"<br>Ürün Adı : "+urunAdi+"<br>Ürün Fiyatı : "+urunFiyati+"<br>Ürün Açıklama : "+urunAciklama+"<br>Ürün Tipi : "+urunTipi+"<br>Ana Resim : "+anaresim);
-
+            Response.Redirect("~/UrunListesi.aspx");
         }
     }
 }

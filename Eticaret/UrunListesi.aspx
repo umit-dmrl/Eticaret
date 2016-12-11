@@ -46,6 +46,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="message" runat="server"></div>
     <div class="simgeler"><span class="icon-test-urun">T</span> : Test Ürünü , <span class="icon-normal-urun">N</span> : Normal Ürün , <span class="icon-indirimli-urun">İ</span> : İndirimli Ürün , <span class="icon-kampanya-urun">K</span> : Kampanyalı Ürün</div>
     <asp:ListView ID="listUrunler" runat="server">
         <ItemTemplate>
@@ -62,7 +63,7 @@
                     </td>
                     <td width="10%"><%# Eval("urunFiyati").ToString().Trim() %> TL</td>
                     <td width="20%">
-                        <a href="#" class="btn btn-primary"><i class="fa fa-edit"></i></a> 
+                        <a href="UrunDuzenle.aspx?id=<%# Eval("id") %>" class="btn btn-primary"><i class="fa fa-edit"></i></a> 
                         <a href="#" class="btn btn-danger"><i class="fa fa-remove"></i></a>
                     </td>
                 </tr>

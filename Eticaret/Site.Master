@@ -1,0 +1,423 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Eticaret.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title id="site_title" runat="server">Hızlı Ve Güvenilir Alışverişin Tek Adresi</title>
+	<meta name="keywords" id="site_keywords" runat="server" content="../">
+	<meta name="description" id="site_description" runat="server" content="../">
+	<meta name="author" content="Ümit DEMİREL">
+	<meta name="googlebot" content="All, Index, Follow" />
+	<meta name="Robots" content="All, Index, Follow" />
+	<meta name="rating" content="General" />
+	<meta name="expires" content="no" />
+	<meta name="language" content="turkish, TR" />
+	<meta name="distribution" content="Global" />
+	<meta name="googlebot" content="NOODP" />
+
+	<!-- ============ Styles ============ -->
+    <link rel='stylesheet prefetch' href='assets/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="site_tasarim/assets/styles/reset.css" type="text/css" />
+	<link rel="stylesheet" href="site_tasarim/assets/styles/custom.css" type="text/css" />
+	<link rel="stylesheet" href="site_tasarim/assets/font/font.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+	<!-- ============ Font-Awesome ============ -->
+	<link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css">
+
+	<!-- ============ Mobil CSS ============ -->
+	<link rel="stylesheet" href="site_tasarim/assets/mobile/media-queries.css" type="text/css" />
+
+	<!-- ============ Google Font ============ -->
+
+	<!-- ============ Fav-Icon ============ -->
+	<link rel="Shortcut Icon" href="site_tasarim/assets/images/icons/fav_icon.png" type="image/x-icon">
+    
+    <!-- Scripts -->
+	<script type="text/javascript" src="site_tasarim/assets/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="site_tasarim/assets/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="site_tasarim/assets/scripts/custom.js"></script>
+    <script src='assets/js/bootstrap.min.js'></script>
+
+    <!-- Add jQuery assetsrary -->
+	<script type="text/javascript" src="site_tasarim/assets/scripts/jquery-1.10.1.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="site_tasarim/assets/scripts/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="site_tasarim/assets/source/jquery.fancybox.js?v=2.1.5"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- enust -->
+<div class="enust">
+	<!-- ortala -->
+	<div class="ortala">
+		<a href="Default.aspx" runat="server" id="logo" class="logo">
+            Hızlı Ve Güvenilir Alışverişin Tek Adresi
+		</a>
+	</div><!-- ortala -->
+</div><!-- enust -->
+
+<!-- enust-alt -->
+<div class="enust-alt">
+	<!-- ortala -->
+	<div class="ortala">
+		<!-- menu -->
+		<div class="menu">
+			<a href="Default.aspx" class="anasayfa">
+				<img src="site_tasarim/assets/images/home_icon.png" widht="17" height="20" alt="">
+			</a>
+			<span class="menu_home_line"></span>
+			<ul>
+				<li><a href="hakkimizda.html">Ana Sayfa</a></li>
+				<li id="submenu_item"><a href="projeler.html">Ürün Kategorileri</a>
+                    <ul id="alt_menu">
+                        <asp:ListView ID="listKategoriler" runat="server">
+                            <ItemTemplate>
+                                <li><a href="Kategori.aspx?id=<%# Eval("id") %>"><%# Eval("kategoriAdi") %></a></li>
+                            </ItemTemplate>
+                        </asp:ListView>
+                    </ul>
+				</li>
+				<li><a href="araclar.html">Hakkımızda</a></li>
+				<li><a href="iletisim.html">iletişim</a></li>
+			</ul>
+		</div><!-- menu -->
+	</div><!-- ortala -->
+</div><!-- enust-alt -->
+
+<!-- orta -->
+<div class="orta">
+	<!-- ortala -->
+	<div class="ortala">
+		<!-- slider -->
+		<div class="slider">
+
+			<ul>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="site_tasarim/assets/images/slider_img.jpg" width="985" height="376" alt="Web Turkuaz">
+					</a>
+				</li>
+			</ul>
+		</div><!-- slider -->
+		<!-- slider_degis_box -->
+		<div class="slider_degis_box">
+			<ul>
+				<li><span class="slider_degis"></span></li>
+				<li><span class="slider_degis"></span></li>
+				<li><span class="slider_degis"></span></li>
+				<li><span class="slider_degis"></span></li>
+				<li><span class="slider_degis"></span></li>
+				<li><span class="slider_degis"></span></li>
+				<li><span class="slider_degis"></span></li>
+				<li><span class="slider_degis"></span></li>
+				<li><span class="slider_degis"></span></li>
+				<li><span class="slider_degis"></span></li>
+				<li><span class="slider_degis"></span></li>
+			</ul>
+		</div><!-- slider_degis_box -->
+
+		<!-- duyuru_box_bg -->
+		<div class="duyuru_box_bg">
+			<h2 class="duyuru_baslik">Duyurular ve Haberler</h2>
+			<!-- duyuru_degis_bg -->
+			<div class="duyuru_degis_bg">
+				<span class="duyuru_degis_left"></span>
+				<span class="duyuru_degis_right"></span>
+			</div><!-- duyuru_degis_bg -->
+
+			<div class="clear"></div>
+
+			<!-- duyuru_icon -->
+			<div class="duyuru_icon">
+				<img src="site_tasarim/assets/images/duyuru_icon.png" width="6" height="10" alt="Duyurular" />
+			</div><!-- duyuru_icon -->
+
+			<!-- duyuru -->
+			<div class="duyuru">
+				<ul>
+					<li><a href="#">Lorem Ipsum is simply 1</a></li>
+					<li><a href="#">Lorem Ipsum is simply 2</a></li>
+					<li><a href="#">Lorem Ipsum is simply 3</a></li>
+				</ul>
+			</div><!-- duyuru -->
+
+		</div><!-- duyuru_box_bg -->
+
+		<!-- icerik -->
+		<div class="icerik">
+            <asp:ContentPlaceHolder ID="main_content" runat="server">
+        
+            </asp:ContentPlaceHolder>
+		</div><!-- icerik -->
+
+	</div><!-- ortala -->
+</div><!-- orta -->
+
+<!-- enalt -->
+<div class="enalt">
+	<!-- ortala -->
+	<div class="ortala">
+		<!-- enalt_yazi -->
+		<span class="enalt_yazi" id="copyright" runat="server">Copyright © 2014. Tüm hakları <font color="#ba272d">www.webturkuaz.com</font> aittir.</span><!-- enalt_yazi -->
+
+        <!-- icon -->
+		<span class="icon" id="icon_linkedin" runat="server">
+			
+		</span><!-- icon -->
+
+		<!-- icon -->
+		<span class="icon" id="icon_instagram" runat="server">
+			
+		</span><!-- icon -->
+
+		<!-- icon -->
+		<span class="icon" id="icon_twitter" runat="server">
+			
+		</span><!-- icon -->
+		
+		<!-- icon -->
+		<span class="icon" id="icon_facebook" runat="server">
+			
+		</span><!-- icon -->
+	</div><!-- ortala -->
+</div><!-- enalt -->
+
+    </form>
+</body>
+</html>

@@ -72,16 +72,21 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Giris.aspx" />
+    <Content Include="IletisimBilgileriGuncelle.aspx" />
     <Content Include="KategoriDuzenle.aspx" />
     <Content Include="KategoriEkle.aspx" />
     <Content Include="KategoriListesi.aspx" />
     <Content Include="KategoriSil.aspx" />
     <Content Include="packages.config" />
+    <Content Include="SiteAyarlari.aspx" />
+    <Content Include="UrunDuzenle.aspx" />
     <Content Include="UrunListesi.aspx" />
     <Content Include="UrunResimleriYukle.aspx" />
     <Content Include="YeniUrunEkle.aspx" />
     <Content Include="YonetimPaneli.aspx" />
     <Content Include="AdminSablon.Master" />
+    <Content Include="_UrunResmiSil.aspx" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -118,6 +123,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IletisimBilgileriGuncelle.aspx.cs">
+      <DependentUpon>IletisimBilgileriGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IletisimBilgileriGuncelle.aspx.designer.cs">
+      <DependentUpon>IletisimBilgileriGuncelle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="KategoriDuzenle.aspx.cs">
       <DependentUpon>KategoriDuzenle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,6 +159,27 @@
       <DependentUpon>KategoriSil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteAyarlari.aspx.cs">
+      <DependentUpon>SiteAyarlari.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteAyarlari.aspx.designer.cs">
+      <DependentUpon>SiteAyarlari.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UrunDuzenle.aspx.cs">
+      <DependentUpon>UrunDuzenle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UrunDuzenle.aspx.designer.cs">
+      <DependentUpon>UrunDuzenle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UrunListesi.aspx.cs">
       <DependentUpon>UrunListesi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -175,6 +208,13 @@
     </Compile>
     <Compile Include="YonetimPaneli.aspx.designer.cs">
       <DependentUpon>YonetimPaneli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="_UrunResmiSil.aspx.cs">
+      <DependentUpon>_UrunResmiSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UrunResmiSil.aspx.designer.cs">
+      <DependentUpon>_UrunResmiSil.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

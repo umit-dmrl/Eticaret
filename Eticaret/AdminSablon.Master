@@ -39,6 +39,11 @@
                 <li><a href="UrunListesi.aspx"><i class="fa fa-arrow-circle-right"></i> Ürünleri Listele</a></li>
                 <li><a href="UrunResimleriYukle.aspx"><i class="fa fa-image"></i> Ürün Resimleri Yükle</a></li>
             </ul>
+            <div class="menu-title"><i class="fa fa-cog"></i> Site Ayarları</div>
+            <ul id="menu">
+                <li><a href="SiteAyarlari.aspx"><i class="fa fa-arrow-circle-right"></i> Site Ayarları</a></li>
+                <li><a href="IletisimBilgileriGuncelle.aspx"><i class="fa fa-arrow-circle-right"></i> Site İletişim Bilgileri</a></li>
+            </ul>
         </nav>
         <main class="body">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

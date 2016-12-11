@@ -15,6 +15,19 @@ namespace Eticaret
         Veritabani vt = new Veritabani(); 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //işlemlerin geriye dönen olumlu veya olumsuz sonuçlarını mesaj ile gösterme kısmı
+            if(Request.QueryString["islem"]!=null)
+            {
+                string durum = Request.QueryString["islem"].ToString().Trim();
+                if(durum=="success")
+                {
+                    message.InnerHtml = "<div class='alert alert-success'><b>Başarılı!</b> İşlem Başarıyla Tamamlandı.</div>";
+                }else if (durum=="error")
+                {
+                    message.InnerHtml = "<div class='alert alert-danger'><b>Hata!</b> İşlem Başarısız Oldu.</div>";
+                }
+            }
+
             try
             {
                 vt.cnn.Open();
