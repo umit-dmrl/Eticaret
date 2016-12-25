@@ -80,5 +80,26 @@ namespace E_Ticaret_Projesi
             listKategori.DataBind();
             db.cnn.Close();
         }
+
+        protected void btnAra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                db.cnn.Open();
+                SqlDataAdapter adp = new SqlDataAdapter("select * from kategoriler where kategoriAdi like '%"+txtKategoriAdi.Text.ToString().Trim()+"%'", db.cnn);
+                DataTable tbl = new DataTable();
+                adp.Fill(tbl);
+                listKategori.DataSource = tbl.DefaultView;
+                listKategori.DataBind();
+            }
+            catch(Exception ex)
+            {
+                Response.Write(ex);
+            }
+            finally
+            {
+                db.cnn.Close();
+            }
+        }
     }
 }

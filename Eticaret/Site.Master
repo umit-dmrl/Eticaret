@@ -239,6 +239,10 @@
 		<a href="Default.aspx" runat="server" id="logo" class="logo">
             Hızlı Ve Güvenilir Alışverişin Tek Adresi
 		</a>
+        <div id="top-menu">
+            <a href="SepetListesi.aspx"><i class="fa fa-shopping-basket"></i> Sepetim</a>
+            <a href="SiparisSorgula.aspx"><i class="fa fa-cart-plus"></i> Siparişler</a>
+        </div>
 	</div><!-- ortala -->
 </div><!-- enust -->
 
@@ -253,8 +257,8 @@
 			</a>
 			<span class="menu_home_line"></span>
 			<ul>
-				<li><a href="hakkimizda.html">Ana Sayfa</a></li>
-				<li id="submenu_item"><a href="projeler.html">Ürün Kategorileri</a>
+				<li><a href="Default.aspx">Ana Sayfa</a></li>
+				<li id="submenu_item"><a href="javascript:void(0)">Ürün Kategorileri</a>
                     <ul id="alt_menu">
                         <asp:ListView ID="listKategoriler" runat="server">
                             <ItemTemplate>
@@ -263,10 +267,16 @@
                         </asp:ListView>
                     </ul>
 				</li>
-				<li><a href="araclar.html">Hakkımızda</a></li>
-				<li><a href="iletisim.html">iletişim</a></li>
+				<li><a href="Hakkimda.aspx">Hakkımızda</a></li>
+				<li><a href="Iletisim.aspx">İletişim</a></li>
 			</ul>
 		</div><!-- menu -->
+        <!-- arama -->
+        <div class="search">
+            <asp:TextBox ID="txtSearch" runat="server" CssClass="form form-control"></asp:TextBox>
+            <asp:Button ID="btnAra" runat="server" Text="Ara" CssClass="btn btn-default" />
+        </div>
+        <!-- arama -->
 	</div><!-- ortala -->
 </div><!-- enust-alt -->
 
@@ -352,32 +362,7 @@
 			</ul>
 		</div><!-- slider_degis_box -->
 
-		<!-- duyuru_box_bg -->
-		<div class="duyuru_box_bg">
-			<h2 class="duyuru_baslik">Duyurular ve Haberler</h2>
-			<!-- duyuru_degis_bg -->
-			<div class="duyuru_degis_bg">
-				<span class="duyuru_degis_left"></span>
-				<span class="duyuru_degis_right"></span>
-			</div><!-- duyuru_degis_bg -->
-
-			<div class="clear"></div>
-
-			<!-- duyuru_icon -->
-			<div class="duyuru_icon">
-				<img src="site_tasarim/assets/images/duyuru_icon.png" width="6" height="10" alt="Duyurular" />
-			</div><!-- duyuru_icon -->
-
-			<!-- duyuru -->
-			<div class="duyuru">
-				<ul>
-					<li><a href="#">Lorem Ipsum is simply 1</a></li>
-					<li><a href="#">Lorem Ipsum is simply 2</a></li>
-					<li><a href="#">Lorem Ipsum is simply 3</a></li>
-				</ul>
-			</div><!-- duyuru -->
-
-		</div><!-- duyuru_box_bg -->
+		
 
 		<!-- icerik -->
 		<div class="icerik">

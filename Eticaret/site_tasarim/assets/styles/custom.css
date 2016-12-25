@@ -18,6 +18,7 @@
     font-family:Arial;
     font-size:28px;
     color:#27364d;
+    float:left;
 }
 .aramayeri
 {
@@ -58,6 +59,13 @@
 }
 .menu{
 	float: left;
+}
+.search{
+    float:right;
+    margin-top:5px;
+}
+.search #btnAra{
+    margin-top:-9px;
 }
 .anasayfa{
 	width: auto;
@@ -148,7 +156,8 @@
 .slider{
 	float: left;
 	width: 985px;
-	height: 376px;
+	height: 170px;
+    margin-top:10px;
 	overflow: hidden;
 }
 .slider ul{
@@ -558,6 +567,7 @@ margin-left: 6px;
 .urun-item #urun-resim{
     display:block;
     padding:3px;
+    text-align:center;
     border-bottom:1px dotted #ccc;
 }
 .urun-item #urun-title{
@@ -575,4 +585,105 @@ margin-left: 6px;
 .urun-item #buttons{
     padding:3px;
     text-align:center;
+}
+.content-title{
+    display:block;
+    background-color:#898de4;
+    color:white;
+    font-weight:bold;
+    padding:10px;
+    border-radius:5px;
+    margin-bottom:5px;
+}
+.product-content{
+    display:block;
+    min-height:250px;
+    overflow:hidden;
+    width:800px;
+    margin-left:auto; margin-right:auto;
+}
+.product-content #left-side{
+    display:block;
+    width:200px;
+    float:left;
+    margin-right:50px;
+}
+.product-content #right-side {
+    display:block;
+    float:left;
+    width:500px;
+}
+.product-content #right-side ul{
+    display:block;
+    padding:0px;
+    margin:0px;
+}
+.product-content #right-side ul li{
+    display:block;
+    padding:8px;
+    border-bottom:1px dotted #ccc;
+}
+.product-content #left-side .main-image{
+    display:block;
+    padding:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+
+}
+.product-content #left-side .main-image img {
+    display:block;
+    border-radius:5px;
+}
+.product-content #left-side .product-images{
+    display:block;
+    padding:10px;
+}
+.product-content #left-side .product-images img {
+    float:left;
+    border-radius:3px;
+    margin-right:5px;
+    margin-bottom:5px;
+}
+.sepet-product-item{
+    display:block;
+    padding:10px;
+    background-color:#f4f4f4;
+    border-bottom:1px solid #ccc;
+    overflow:hidden;
+    height:60px;
+}
+.sepet-product-item #resim{
+    display:block;
+    float:left;
+    margin-right:10px;
+    width:60px;
+    height:60px;
+    padding:3px;
+    background-color:white;
+    border:1px solid #ccc;
+}
+.sepet-product-item #resim img{
+    width:60px;
+    height:60px;
+}
+.sepet-product-item #urun-bilgileri{
+    display:block;
+    float:left;
+}
+#top-menu{
+    display:block;
+    float:right;
+    margin-top:90px;
+}
+#top-menu a{
+    text-decoration:none;
+    background-color:#e61f1f;
+    font-size:14px;
+    font-family:Arial;
+    color:white;
+    padding:10px;
+    border-radius:5px 5px 0px 0px;
+}
+#top-menu a:hover {
+    color:yellow;
 }

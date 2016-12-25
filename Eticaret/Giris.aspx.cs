@@ -13,7 +13,10 @@ namespace E_Ticaret_Projesi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["UserID"]!=null)
+            {
+                Response.Redirect("~/YonetimPaneli.aspx");
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

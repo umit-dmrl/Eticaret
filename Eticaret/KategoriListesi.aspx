@@ -3,6 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
+    Kategori Adına Göre Arama Yapın : <asp:TextBox ID="txtKategoriAdi" CssClass="form form-control" runat="server"></asp:TextBox>
+    <asp:Button ID="btnAra" runat="server" Text="Ara" CssClass="btn btn-primary" OnClick="btnAra_Click" />
     <br /><br />
         <table align="center" width="100%" style="background-color:black; color:white;" cellpadding="5">
                 <tr>

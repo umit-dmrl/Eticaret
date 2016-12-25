@@ -15,6 +15,48 @@ namespace Eticaret
         Veritabani vt = new Veritabani();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["sil"] != null)
+            {
+                try
+                {
+                    int silinecek = Convert.ToInt32(Request.QueryString["sil"]);
+                    vt.cnn.Open();
+                    SqlCommand sorgula = new SqlCommand("select * from urun_resimleri where id=" + silinecek, vt.cnn);
+                    SqlDataReader oku = sorgula.ExecuteReader();
+                    if (oku.Read())
+                    {
+                        oku.Close();
+                        try
+                        {
+                            SqlCommand sil = new SqlCommand("delete from urun_resimleri where id=" + silinecek, vt.cnn);
+                            sil.ExecuteNonQuery();
+                            message.InnerHtml = "<div class='alert alert-success'><b>Başarılı!</b> Resim Başarıyla Silindi.</div>";
+                        }
+                        catch (Exception ex)
+                        {
+                            Response.Write("Silme Hatası!" + ex);
+                        }
+                    }
+                    else
+                    {
+                        message.InnerHtml = "<div class='alert alert-danger'><b>Hata!</b> Silmek istediğiniz resim bulunamadı.</div>";
+                    }
+
+                }
+                catch (FormatException ex)
+                {
+                    message.InnerHtml = "<div class='alert alert-danger'><b>Uyarı!</b> Tanımsız İşlem Yapılmaya Çalışıldı.</div>";
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("Sistem Hatası!" + ex);
+                }
+                finally
+                {
+                    vt.cnn.Close();
+                }
+            }
+
             if (!Page.IsPostBack)
             {
                 try

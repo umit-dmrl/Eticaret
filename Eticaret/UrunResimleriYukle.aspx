@@ -27,6 +27,7 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="message" runat="server"></div>
     <div>
         Yüklemek İstediğiniz Ürün Resimlerini Seçiniz<br />
         <asp:FileUpload ID="digerResimleri" runat="server" AllowMultiple="True" />

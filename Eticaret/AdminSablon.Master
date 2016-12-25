@@ -5,13 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Yönetim Paneli</title>
-    <link rel="stylesheet" href="assets/css/Admin.css" />
+    
     <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css">
     <link rel='stylesheet prefetch' href='assets/css/bootstrap.min.css'>
     <script src='assets/js/jquery.min.js'></script>
     <script src='assets/js/bootstrap.min.js'></script>
     <script src="assets/js/jquery-ui.js"></script>
     <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/Admin.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -20,14 +21,18 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     &nbsp;<div class="main">
         <div class="header">
-            <div class="logo">Yönetim Paneli</div>
+            <div class="logo"><i class="fa fa-cogs"></i> Yönetim Paneli</div>
             <div class="header-menu">
                 Hoşgeldin <asp:Label ID="lblUserName" runat="server" Text="" style="text-decoration:underline; font-weight:bold; text-transform:uppercase;"></asp:Label> 
-                <a href="~/Default.aspx">Siteye Git</a>
-                <a href="~/Logout.aspx">Çıkış Yap</a>
+                <a href="Default.aspx">Siteye Git</a>
+                <a href="Logout.aspx">Çıkış Yap</a>
             </div>
         </div>
         <nav class="left-menu">
+            <div class="menu-title"><i class="fa fa-user"></i> Yönetici Ayarları</div>
+            <ul id="menu">
+                <li><a href="YoneticiAyarlari.aspx"><i class="fa fa-arrow-circle-right"></i> Yönetici Ayarları</a></li>
+            </ul>
             <div class="menu-title"><i class="fa fa-list"></i> Kategori Yönetimi</div>
             <ul id="menu">
                 <li><a href="KategoriEkle.aspx"><i class="fa fa-arrow-circle-right"></i> Yeni Kategori Ekle</a></li>
@@ -43,6 +48,10 @@
             <ul id="menu">
                 <li><a href="SiteAyarlari.aspx"><i class="fa fa-arrow-circle-right"></i> Site Ayarları</a></li>
                 <li><a href="IletisimBilgileriGuncelle.aspx"><i class="fa fa-arrow-circle-right"></i> Site İletişim Bilgileri</a></li>
+            </ul>
+            <div class="menu-title"><i class="fa fa-shopping-basket"></i> Sipariş Yönetimi</div>
+            <ul id="menu">
+                <li><a href="AdminSiparisListele.aspx"><i class="fa fa-arrow-circle-right"></i> Siparişler</a></li>
             </ul>
         </nav>
         <main class="body">

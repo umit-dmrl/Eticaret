@@ -22,6 +22,24 @@ namespace Eticaret {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl message;
         
         /// <summary>
+        /// txtUrunAdi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUrunAdi;
+        
+        /// <summary>
+        /// btnAra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAra;
+        
+        /// <summary>
         /// listUrunler control.
         /// </summary>
         /// <remarks>

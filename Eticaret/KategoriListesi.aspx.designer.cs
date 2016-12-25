@@ -22,6 +22,24 @@ namespace E_Ticaret_Projesi {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
+        /// txtKategoriAdi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtKategoriAdi;
+        
+        /// <summary>
+        /// btnAra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAra;
+        
+        /// <summary>
         /// listKategori control.
         /// </summary>
         /// <remarks>

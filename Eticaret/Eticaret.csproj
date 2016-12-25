@@ -52,6 +52,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -70,19 +74,34 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminSiparisListele.aspx" />
+    <Content Include="assets\images\hakkimda.png" />
+    <Content Include="assets\images\iletisim.png" />
     <Content Include="Default.aspx" />
     <Content Include="Giris.aspx" />
+    <Content Include="Hakkimda.aspx" />
+    <Content Include="Iletisim.aspx" />
     <Content Include="IletisimBilgileriGuncelle.aspx" />
+    <Content Include="Kategori.aspx" />
     <Content Include="KategoriDuzenle.aspx" />
     <Content Include="KategoriEkle.aspx" />
     <Content Include="KategoriListesi.aspx" />
     <Content Include="KategoriSil.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="packages.config" />
+    <Content Include="SepeteEkle.aspx" />
+    <Content Include="SepetListesi.aspx" />
+    <Content Include="SiparisDetay.aspx" />
+    <Content Include="SiparisOnayMesaji.aspx" />
+    <Content Include="SiparisSorgula.aspx" />
+    <Content Include="SiparisTamamla.aspx" />
     <Content Include="SiteAyarlari.aspx" />
+    <Content Include="UrunDetay.aspx" />
     <Content Include="UrunDuzenle.aspx" />
     <Content Include="UrunListesi.aspx" />
     <Content Include="UrunResimleriYukle.aspx" />
     <Content Include="YeniUrunEkle.aspx" />
+    <Content Include="YoneticiAyarlari.aspx" />
     <Content Include="YonetimPaneli.aspx" />
     <Content Include="AdminSablon.Master" />
     <Content Include="_UrunResmiSil.aspx" />
@@ -96,7 +115,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminSablon.Master.cs">
@@ -105,6 +126,13 @@
     </Compile>
     <Compile Include="AdminSablon.Master.designer.cs">
       <DependentUpon>AdminSablon.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSiparisListele.aspx.cs">
+      <DependentUpon>AdminSiparisListele.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminSiparisListele.aspx.designer.cs">
+      <DependentUpon>AdminSiparisListele.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -123,12 +151,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Hakkimda.aspx.cs">
+      <DependentUpon>Hakkimda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hakkimda.aspx.designer.cs">
+      <DependentUpon>Hakkimda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Iletisim.aspx.cs">
+      <DependentUpon>Iletisim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Iletisim.aspx.designer.cs">
+      <DependentUpon>Iletisim.aspx</DependentUpon>
+    </Compile>
     <Compile Include="IletisimBilgileriGuncelle.aspx.cs">
       <DependentUpon>IletisimBilgileriGuncelle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="IletisimBilgileriGuncelle.aspx.designer.cs">
       <DependentUpon>IletisimBilgileriGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kategori.aspx.cs">
+      <DependentUpon>Kategori.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kategori.aspx.designer.cs">
+      <DependentUpon>Kategori.aspx</DependentUpon>
     </Compile>
     <Compile Include="KategoriDuzenle.aspx.cs">
       <DependentUpon>KategoriDuzenle.aspx</DependentUpon>
@@ -158,7 +207,56 @@
     <Compile Include="KategoriSil.aspx.designer.cs">
       <DependentUpon>KategoriSil.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SepeteEkle.aspx.cs">
+      <DependentUpon>SepeteEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SepeteEkle.aspx.designer.cs">
+      <DependentUpon>SepeteEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SepetListesi.aspx.cs">
+      <DependentUpon>SepetListesi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SepetListesi.aspx.designer.cs">
+      <DependentUpon>SepetListesi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SiparisDetay.aspx.cs">
+      <DependentUpon>SiparisDetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiparisDetay.aspx.designer.cs">
+      <DependentUpon>SiparisDetay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SiparisOnayMesaji.aspx.cs">
+      <DependentUpon>SiparisOnayMesaji.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiparisOnayMesaji.aspx.designer.cs">
+      <DependentUpon>SiparisOnayMesaji.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SiparisSorgula.aspx.cs">
+      <DependentUpon>SiparisSorgula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiparisSorgula.aspx.designer.cs">
+      <DependentUpon>SiparisSorgula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SiparisTamamla.aspx.cs">
+      <DependentUpon>SiparisTamamla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiparisTamamla.aspx.designer.cs">
+      <DependentUpon>SiparisTamamla.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -172,6 +270,13 @@
     </Compile>
     <Compile Include="SiteAyarlari.aspx.designer.cs">
       <DependentUpon>SiteAyarlari.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UrunDetay.aspx.cs">
+      <DependentUpon>UrunDetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UrunDetay.aspx.designer.cs">
+      <DependentUpon>UrunDetay.aspx</DependentUpon>
     </Compile>
     <Compile Include="UrunDuzenle.aspx.cs">
       <DependentUpon>UrunDuzenle.aspx</DependentUpon>
@@ -202,6 +307,13 @@
     <Compile Include="YeniUrunEkle.aspx.designer.cs">
       <DependentUpon>YeniUrunEkle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="YoneticiAyarlari.aspx.cs">
+      <DependentUpon>YoneticiAyarlari.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiAyarlari.aspx.designer.cs">
+      <DependentUpon>YoneticiAyarlari.aspx</DependentUpon>
+    </Compile>
     <Compile Include="YonetimPaneli.aspx.cs">
       <DependentUpon>YonetimPaneli.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -219,7 +331,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\" />
     <Folder Include="Models\" />
     <Folder Include="uploads\" />
   </ItemGroup>

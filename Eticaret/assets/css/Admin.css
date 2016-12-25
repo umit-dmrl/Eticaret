@@ -44,7 +44,8 @@
     background-color:white;
     margin-left:auto; margin-right:auto;
     min-height:800px;
-    border:1px solid gray;
+    border:1px solid #ccc;
+    box-shadow:3px 3px 3px #ccc;
     overflow:hidden;
     padding-bottom:30px;
 }
@@ -56,6 +57,7 @@
     background:url('../images/admin/header.png') no-repeat left top;
     overflow:hidden;
     clear:both;
+    box-shadow:3px 3px 3px #ccc;
 }
 .main .header .logo{
     display:block;
@@ -146,4 +148,30 @@
     min-height:500px;
     color:gray;
     width:550px;
+}
+.sepet-product-item{
+    display:block;
+    padding:10px;
+    background-color:#f4f4f4;
+    border-bottom:1px solid #ccc;
+    overflow:hidden;
+    height:60px;
+}
+.sepet-product-item #resim{
+    display:block;
+    float:left;
+    margin-right:10px;
+    width:60px;
+    height:60px;
+    padding:3px;
+    background-color:white;
+    border:1px solid #ccc;
+}
+.sepet-product-item #resim img{
+    width:60px;
+    height:60px;
+}
+.sepet-product-item #urun-bilgileri{
+    display:block;
+    float:left;
 }
